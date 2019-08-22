@@ -7,6 +7,7 @@
             <!-- <h2><a href="">{{ post.title }}</a></h2> post sprzed zmian -->
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
+            <div class = "comment"><a href="{% url 'post_detail' pk=post.pk %}">Komentarze: {{ post.approved_comments.count }}</a></div>
         </div>
         {% endfor %}
 {% endblock %}
